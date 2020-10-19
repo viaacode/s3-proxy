@@ -1,0 +1,57 @@
+[ {
+  "id" : 196,
+  "name" : "Archief voor Onderwijs",
+  "httpAccessible" : false,
+  "exportReasonRequired" : false,
+  "exportReasons" : [ ],
+  "customExportReasonAllowed" : true
+}, {
+  "id" : 166,
+  "name" : "casftp",
+  "httpAccessible" : false,
+  "exportReasonRequired" : false,
+  "exportReasons" : [ ],
+  "customExportReasonAllowed" : true
+}, {
+  "id" : 208,
+  "name" : "Exporteer als Pro-res",
+  "httpAccessible" : false,
+  "exportReasonRequired" : false,
+  "exportReasons" : [ ],
+  "customExportReasonAllowed" : true
+}, {
+  "id" : 318,
+  "name" : "hires naar viaa ftp",
+  "httpAccessible" : false,
+  "exportReasonRequired" : false,
+  "exportReasons" : [ ],
+  "customExportReasonAllowed" : true
+}, {
+  "id" : 155,
+  "name" : "Large (2400 x 1600)",
+  "httpAccessible" : true,
+  "exportReasonRequired" : false,
+  "exportReasons" : [ ],
+  "customExportReasonAllowed" : true
+}, {
+  "id" : 156,
+  "name" : "Medium (800 x 600)",
+  "httpAccessible" : true,
+  "exportReasonRequired" : false,
+  "exportReasons" : [ ],
+  "customExportReasonAllowed" : true
+}, {
+  "id" : 11,
+  "name" : "Original",
+  "httpAccessible" : true,
+  "exportReasonRequired" : false,
+  "exportReasons" : [ ],
+  "customExportReasonAllowed" : true
+}, {
+  "id" : 157,
+  "name" : "Small (320 x 200)",
+  "httpAccessible" : true,
+  "exportReasonRequired" : false,
+  "exportReasons" : [ ],
+  "customExportReasonAllowed" : true
+} ]

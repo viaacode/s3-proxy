@@ -1,0 +1,37 @@
+Metrics/LineLength:
+  IgnoreCopDirectives: true
+  Max: 130
+
+Metrics/ModuleLength:
+  Max: 300
+
+Metrics/ClassLength:
+  Max: 300
+
+Metrics/LineLength:
+  Max: 200
+
+Metrics/AbcSize:
+  Max: 70
+
+Metrics/BlockLength:
+  Max: 80
+
+Metrics/BlockNesting:
+  Max: 5
+
+Metrics/ParameterLists:
+  Max: 10
+
+Metrics/PerceivedComplexity:
+  Max: 15
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 100
+
+Metrics/CyclomaticComplexity:
+  Max: 15
+
+AllCops:
+  TargetRubyVersion: 2.4

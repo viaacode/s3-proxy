@@ -1,0 +1,604 @@
+
+{
+   "totalNrOfResults":3,
+   "startIndex":0,
+   "mediaDataList":[
+      {
+         "offsetFrames":0,
+         "fragmentStartFrames":0,
+         "fragmentEndFrames":2655,
+         "fragmentDurationFrames":2655,
+         "offsetTimeCode":"00:00:00.000",
+         "fragmentStartTimeCode":"00:00:00.000",
+         "fragmentEndTimeCode":"00:01:46.200",
+         "fragmentDurationTimeCode":"00:01:46.200",
+         "mediaObjectId":"24e85a2b44e848a7b174698c56bac9acb40a0748b5f1405abeeff2732ab19eab",
+         "fragmentId":"24e85a2b44e848a7b174698c56bac9acb40a0748b5f1405abeeff2732ab19eabc9888887ca4c47f0ba8a3915151f5572",
+         "externalId":"qs049p2wj2v",
+         "title": "test_title",
+         "description": "description",
+         "date":"2017:07:03 13:51:00",
+         "previewImagePath": "http://thumbnailpreviews.be/no-preview.png",
+         "thumbnailImagePath": "http://thumbnailpreviews.be/no-preview.png",
+         "videoPath": "http://thumbnailpreviews.be/no-preview.mp4",
+         "originalFileName":"qs049p2wj2v.mp4",
+         "width":1920,
+         "height":1080,
+         "keywords":[
+
+         ],
+         "type":"Video",
+         "authors":[
+
+         ],
+         "lastModifiedDate":"2017-07-19T11:47:15Z",
+         "archiveDate":"2017-07-14T13:47:24Z",
+         "exportable":false,
+         "editable":false,
+         "deletable":false,
+         "isPublic":false,
+         "ingestSpaceId":"",
+         "isInIngestSpace":false,
+         "status":"FINISHED",
+         "browseStatus":null,
+         "originalStatus":"completed",
+         "archiveStatus":"failed",
+         "workflow":"manual",
+         "mdProperties":[
+            {
+               "value":"2017-06-23",
+               "attribute":"dcterms_created"
+            },
+            {
+               "value":"OR-rf5kf25",
+               "attribute":"Original_CP_ID"
+            },
+            {
+               "value":"test_title",
+               "attribute":"dc_title"
+            },
+            {
+               "value":"description",
+               "attribute":"dc_description"
+            },
+            {
+               "value":"qs049p2wj2v",
+               "attribute":"PID"
+            },
+            {
+               "value":"testbeeld",
+               "attribute":"CP"
+            },
+            {
+               "value":"2017:07:03 13:51:00",
+               "attribute":"CreationDate"
+            },
+            {
+               "value":"VRT",
+               "attribute":"Original_CP"
+            },
+            {
+               "value":"OR-h41jm1d",
+               "attribute":"CP_id"
+            },
+            {
+               "value":"AIM10353900",
+               "attribute":"dc_identifier_localid"
+            },
+            {
+               "value":"2017-06-23",
+               "attribute":"dcterms_issued"
+            },
+            {
+               "value":"Telestream, LLC Telestream Media Framework - Release TXGP 2016.61.202873",
+               "attribute":"RightsOwner"
+            },
+            {
+               "value":"manual",
+               "attribute":"sp_name"
+            },
+            {
+               "value":"abstract",
+               "attribute":"dcterms_abstract"
+            },
+            {
+               "value": "bucket",
+               "attribute": "s3_bucket"
+            },
+            {
+               "value": "domain",
+               "attribute": "s3_domain"
+            },
+            {
+               "value": "owner",
+               "attribute": "s3_object_owner"
+            },
+            {
+               "value": "abcdefghijklmop123456789",
+               "attribute": "md5_viaa"
+            }
+         ],
+         "relations":{
+
+         }
+      },
+      {
+         "offsetFrames":0,
+         "fragmentStartFrames":0,
+         "fragmentEndFrames":8135,
+         "fragmentDurationFrames":8135,
+         "offsetTimeCode":"00:00:00.000",
+         "fragmentStartTimeCode":"00:00:00.000",
+         "fragmentEndTimeCode":"00:05:25.400",
+         "fragmentDurationTimeCode":"00:05:25.400",
+         "mediaObjectId":"e0b3451e2a564198af27432e8ee3cc6ec0d588ac24ed47119f05655a3c2684dc",
+         "fragmentId":"e0b3451e2a564198af27432e8ee3cc6ec0d588ac24ed47119f05655a3c2684dcb770c623ce1b4d56863d6e2b07f4b36e",
+         "externalId":"qs046q1sv9p",
+         "title": "test_title",
+         "description": "description",
+         "date":"2017:07:19 15:15:42",
+         "previewImagePath":"https://archief-media-qas.viaa.be/viaa/TESTBEELD/e0b3451e2a564198af27432e8ee3cc6ec0d588ac24ed47119f05655a3c2684dc/keyframes/keyframes_1_1/keyframe1.jpg",
+         "thumbnailImagePath":"https://archief-media-qas.viaa.be/viaa/TESTBEELD/e0b3451e2a564198af27432e8ee3cc6ec0d588ac24ed47119f05655a3c2684dc/keyframes-thumb/keyframes_1_1/keyframe1.jpg",
+         "videoPath":"https://archief-media-qas.viaa.be/viaa/TESTBEELD/e0b3451e2a564198af27432e8ee3cc6ec0d588ac24ed47119f05655a3c2684dc/browse.mp4",
+         "originalFileName":"qs046q1sv9p.mp4",
+         "width":320,
+         "height":180,
+         "keywords":[
+
+         ],
+         "type":"Audio",
+         "authors":[
+
+         ],
+         "lastModifiedDate":"2017-07-19T13:37:43Z",
+         "archiveDate":"2017-07-19T13:15:43Z",
+         "exportable":false,
+         "editable":false,
+         "deletable":false,
+         "isPublic":false,
+         "ingestSpaceId":"",
+         "isInIngestSpace":false,
+         "status":"FINISHED",
+         "browseStatus":null,
+         "originalStatus":"completed",
+         "archiveStatus":"failed",
+         "workflow":"dailies",
+         "mdProperties":[
+            {
+               "value":[
+                  {
+                     "value":"11nifi201702171200",
+                     "attribute":"MEDIA_ID"
+                  }
+               ],
+               "attribute":"dc_identifier_localids"
+            },
+            {
+               "value":[
+                  {
+                     "value":"ea592fae-2b01-4eda-a1ce-a10682618a83",
+                     "attribute":"BriefingID"
+                  }
+               ],
+               "attribute":"Algemeen_Briefing_ID"
+            },
+            {
+               "value":[
+                  {
+                     "value":"Nieuwe feiten",
+                     "attribute":"serie"
+                  },
+                  {
+                     "value":"Nieuwe feiten 17/02/2017 12-13U",
+                     "attribute":"programma"
+                  }
+               ],
+               "attribute":"dc_titles"
+            },
+            {
+               "value":[
+                  {
+                     "value":"Radio",
+                     "attribute":"productionCompany"
+                  }
+               ],
+               "attribute":"dc_creators"
+            },
+            {
+               "value":[
+                  {
+                     "value":"Congo",
+                     "attribute":"Sleutelwoord"
+                  },
+                  {
+                     "value":"Democratische Republiek Congo",
+                     "attribute":"Sleutelwoord"
+                  },
+                  {
+                     "value":"internationale politiek",
+                     "attribute":"Sleutelwoord"
+                  },
+                  {
+                     "value":"Joseph Kabila",
+                     "attribute":"Sleutelwoord"
+                  },
+                  {
+                     "value":"Kinshasa",
+                     "attribute":"Sleutelwoord"
+                  }
+               ],
+               "attribute":"lom_keywords"
+            },
+            {
+               "value":[
+                  {
+                     "value":"OUDERE WERKNEMER",
+                     "attribute":"Trefwoord"
+                  },
+                  {
+                     "value":"BEJAARDE",
+                     "attribute":"Trefwoord"
+                  },
+                  {
+                     "value":"ARBEID",
+                     "attribute":"Trefwoord"
+                  },
+                  {
+                     "value":"PSYCHOLOGIE",
+                     "attribute":"Trefwoord"
+                  },
+                  {
+                     "value":"TSHISEKEDI ETIENNE SR",
+                     "attribute":"Trefwoord"
+                  },
+                  {
+                     "value":"GRAF",
+                     "attribute":"Trefwoord"
+                  },
+                  {
+                     "value":"VERLINDEN PETER",
+                     "attribute":"Trefwoord"
+                  },
+                  {
+                     "value":"ZIEKTE VAN ALZHEIMER",
+                     "attribute":"Trefwoord"
+                  },
+                  {
+                     "value":"VOETBAL",
+                     "attribute":"Trefwoord"
+                  },
+                  {
+                     "value":"NEUROCHIRURGIE",
+                     "attribute":"Trefwoord"
+                  },
+                  {
+                     "value":"TOESPRAAK",
+                     "attribute":"Trefwoord"
+                  },
+                  {
+                     "value":"BLAIR TONY",
+                     "attribute":"Trefwoord"
+                  },
+                  {
+                     "value":"YEZERSKIY SAN F",
+                     "attribute":"Trefwoord"
+                  },
+                  {
+                     "value":"BREXIT",
+                     "attribute":"Trefwoord"
+                  },
+                  {
+                     "value":"OPPOSITIE",
+                     "attribute":"Trefwoord"
+                  },
+                  {
+                     "value":"GROOT-BRITTANNIE",
+                     "attribute":"Trefwoord"
+                  },
+                  {
+                     "value":"ONDERZOEK",
+                     "attribute":"Trefwoord"
+                  },
+                  {
+                     "value":"HERSENSCHUDDING",
+                     "attribute":"Trefwoord"
+                  }
+               ],
+               "attribute":"dc_subjects"
+            },
+            {
+               "value":[
+                  {
+                     "value":"d795720q73",
+                     "attribute":"is_verwant_aan"
+                  }
+               ],
+               "attribute":"dc_relations"
+            },
+            {
+               "subKey":"multiselect",
+               "value":[
+                  {
+                     "value":"Audio",
+                     "attribute":"multiselect"
+                  }
+               ],
+               "attribute":"lom_learningresourcetype"
+            },
+            {
+               "subKey":"multiselect",
+               "value":[
+                  {
+                     "value":"Docent",
+                     "attribute":"multiselect"
+                  },
+                  {
+                     "value":"Student",
+                     "attribute":"multiselect"
+                  }
+               ],
+               "attribute":"lom_intendedenduserrole"
+            },
+            {
+               "subKey":"multiselect",
+               "value":[
+                  {
+                     "value":"nl",
+                     "attribute":"multiselect"
+                  }
+               ],
+               "attribute":"lom_languages"
+            },
+            {
+               "subKey":"multiselect",
+               "value":[
+                  {
+                     "value":"levensbeschouwing",
+                     "attribute":"multiselect"
+                  },
+                  {
+                     "value":"PAV - MAVO - GASV - ASPV",
+                     "attribute":"multiselect"
+                  },
+                  {
+                     "value":"politieke en sociale wetenschappen - maatschappijleer",
+                     "attribute":"multiselect"
+                  },
+                  {
+                     "value":"wijsbegeerte en moraalwetenschappen",
+                     "attribute":"multiselect"
+                  }
+               ],
+               "attribute":"lom_classification"
+            },
+            {
+               "subKey":"multiselect",
+               "value":[
+                  {
+                     "value":"Secundair 2de graad",
+                     "attribute":"multiselect"
+                  },
+                  {
+                     "value":"Secundair 3de graad",
+                     "attribute":"multiselect"
+                  }
+               ],
+               "attribute":"lom_typicalagerange"
+            },
+            {
+               "subKey":"multiselect",
+               "value":[
+                  {
+                     "value":"Secundair onderwijs",
+                     "attribute":"multiselect"
+                  }
+               ],
+               "attribute":"lom_context"
+            },
+            {
+               "value":"OR-rf5kf25",
+               "attribute":"Original_CP_ID"
+            },
+            {
+               "value":"2017:07:19 15:15:42+02:00",
+               "attribute":"CreationDate"
+            },
+            {
+               "value":"11nifi201702171200",
+               "attribute":"dc_identifier_cpid"
+            },
+            {
+               "value":"dailies",
+               "attribute":"sp_name"
+            },
+            {
+               "value":"2017-02-17T00:00:00",
+               "attribute":"dcterms_created"
+            },
+            {
+               "value": "test_title",
+               "attribute":"dc_title"
+            },
+            {
+               "value":"qs046q1sv9p",
+               "attribute":"PID"
+            },
+            {
+               "value":"testbeeld",
+               "attribute":"CP"
+            },
+            {
+               "value":"VRT",
+               "attribute":"Original_CP"
+            },
+            {
+               "value": "long_description",
+               "attribute":"dc_description_lang"
+            },
+            {
+               "value":"OR-h41jm1d",
+               "attribute":"CP_id"
+            },
+            {
+               "value":"11nifi201702171200",
+               "attribute":"dc_identifier_localid"
+            },
+            {
+               "value":"2017-02-17",
+               "attribute":"dcterms_issued"
+            },
+            {
+               "value":"© testbeeld",
+               "attribute":"RightsOwner"
+            },
+            {
+               "value":"program",
+               "attribute":"ebu_objectType"
+            },
+            {
+               "value":"true",
+               "attribute":"Rechten_Website_Onderwijs"
+            },
+            {
+               "value":"abstract",
+               "attribute":"dcterms_abstract"
+            },
+            {
+               "value": "bucket",
+               "attribute": "s3_bucket"
+            },
+            {
+               "value": "domain",
+               "attribute": "s3_domain"
+            },
+            {
+               "value": "owner",
+               "attribute": "s3_object_owner"
+            },
+            {
+               "value": "abcdefghijklmop123456789",
+               "attribute": "md5_viaa"
+            }
+         ],
+         "relations":{
+
+         }
+      },
+      {
+         "offsetFrames":0,
+         "fragmentStartFrames":0,
+         "fragmentEndFrames":11268,
+         "fragmentDurationFrames":11268,
+         "offsetTimeCode":"00:00:00.000",
+         "fragmentStartTimeCode":"00:00:00.000",
+         "fragmentEndTimeCode":"00:07:30.720",
+         "fragmentDurationTimeCode":"00:07:30.720",
+         "mediaObjectId":"42ac852bfbdb495e83c74409981c135665c28dd9cdf545c082260a00de4b9bf5",
+         "fragmentId":"42ac852bfbdb495e83c74409981c135665c28dd9cdf545c082260a00de4b9bf568a8e327aafa4b6996afc769a51e03d9",
+         "externalId":"qs09h41k92c",
+         "title": "test_title",
+         "description": "description",
+         "date":"2016:12:09 08:30:19",
+         "previewImagePath": "http://thumbnailpreviews.be/no-preview.png",
+         "thumbnailImagePath": "http://thumbnailpreviews.be/no-preview.png",
+         "videoPath": "http://thumbnailpreviews.be/no-preview.mp4",
+         "originalFileName":"qs09h41k92c.mp4",
+         "width":702,
+         "height":574,
+         "keywords":[
+
+         ],
+         "type":"Video",
+         "authors":[
+
+         ],
+         "lastModifiedDate":"2018-05-16T08:43:42Z",
+         "archiveDate":"2017-07-12T14:00:37Z",
+         "exportable":false,
+         "editable":false,
+         "deletable":false,
+         "isPublic":false,
+         "ingestSpaceId":"",
+         "isInIngestSpace":false,
+         "status":"FINISHED",
+         "browseStatus":null,
+         "originalStatus":"completed",
+         "archiveStatus":"failed",
+         "workflow":"manual",
+         "mdProperties":[
+            {
+               "value":"1968-uu-uu",
+               "attribute":"dcterms_created"
+            },
+            {
+               "value":"OR-4x54g1p",
+               "attribute":"Original_CP_ID"
+            },
+            {
+               "value": "test_title",
+               "attribute":"dc_title"
+            },
+            {
+               "value":"qs09h41k92c",
+               "attribute":"PID"
+            },
+            {
+               "value": "description",
+               "attribute":"dc_description"
+            },
+            {
+               "value":"testbeeld",
+               "attribute":"CP"
+            },
+            {
+               "value":"2016:12:09 08:30:19",
+               "attribute":"CreationDate"
+            },
+            {
+               "value":"ADVN",
+               "attribute":"Original_CP"
+            },
+            {
+               "value":"OR-4x54g1p",
+               "attribute":"CP_id"
+            },
+            {
+               "value":"VVB74",
+               "attribute":"dc_identifier_localid"
+            },
+            {
+               "value":"SubtitleHandler",
+               "attribute":"RightsOwner"
+            },
+            {
+               "value":"manual",
+               "attribute":"sp_name"
+            },
+            {
+               "value": "description",
+               "attribute":"dcterms_abstract"
+            },
+            {
+               "value": "bucket",
+               "attribute": "s3_bucket"
+            },
+            {
+               "value": "domain",
+               "attribute": "s3_domain"
+            },
+            {
+               "value": "owner",
+               "attribute": "s3_object_owner"
+            },
+            {
+               "value": "abcdefghijklmop123456789",
+               "attribute": "md5_viaa"
+            }
+         ],
+         "relations":{
+
+         }
+      }
+   ]
+}
+

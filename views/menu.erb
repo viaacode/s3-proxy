@@ -1,0 +1,13 @@
+    <div class="menu">
+      <ul>
+        <li><a class="current" href="/">VIAA S3 Proxy</a> </li>
+        <li><a href="/redis_stats">Redis check</a></li>
+        <li><a target="_blank" href="/health">Health check</a></li>
+        <li><a target="_blank" href="/lowres/aabbccc1234">Download test</a></li>
+        <li><a target="_blank" href="http://localhost:9999">Minio S3 Store</a> </li>
+        <!--li><a href="/viaa/upload">Upload example</a></li-->
+      
+        <li class="sidekiq-workers-count"> S3 Export Jobs: <%= "#{settings.workers.size}" %></li>
+      </ul>
+
+    </div>

@@ -1,0 +1,12 @@
+FROM minio/minio
+
+ENV MINIO_UPDATE off
+ENV MINIO_ACCESS_KEY='CHANGEME'
+ENV MINIO_SECRET_KEY='ViaaaChangeinOpenshiftPlease'
+# DATA_DIR, CONFIG DIR are set with -v...
+
+EXPOSE 9000
+
+#  RUN chgrp -R 0 /tmp && chmod -R g=u /tmp && \
+
+CMD ["server", "/data"]

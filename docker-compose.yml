@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  redis:
+    image: 'redis:4.0-alpine'
+    command: redis-server
+    volumes:
+      - 'redis:/data'
+    ports:
+      - '6379:6379'
+  
+  s3proxy:
+    depends_on:
+      - redis
+    ports:
+      - '3000:3000'
+    env_file:
+      - '.env'
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+volumes:
+  redis:

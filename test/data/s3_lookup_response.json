@@ -1,0 +1,115 @@
+{
+    "totalNrOfResults": 1,
+    "startIndex": 0,
+    "mediaDataList": [
+        {
+            "offsetFrames": 0,
+            "fragmentStartFrames": 0,
+            "fragmentEndFrames": 11268,
+            "fragmentDurationFrames": 11268,
+            "offsetTimeCode": "00:00:00.000",
+            "fragmentStartTimeCode": "00:00:00.000",
+            "fragmentEndTimeCode": "00:07:30.720",
+            "fragmentDurationTimeCode": "00:07:30.720",
+            "mediaObjectId": "42ac852bfbdb495e83c74409981c135665c28dd9cdf545c082260a00de4b9bf5",
+            "fragmentId": "42ac852bfbdb495e83c74409981c135665c28dd9cdf545c082260a00de4b9bf568a8e327aafa4b6996afc769a51e03d9",
+            "externalId": "qs09h41k92c",
+            "title": "test_title",
+            "description": "description",
+            "date": "2016:12:09 08:30:19",
+            "previewImagePath": "http://thumbnailpreviews.be/no-preview.png",
+            "thumbnailImagePath": "http://thumbnailpreviews.be/no-preview.png",
+            "videoPath": "http://thumbnailpreviews.be/no-preview.mp4",
+            "originalFileName": "qs09h41k92c.mp4",
+            "width": 702,
+            "height": 574,
+            "keywords": [],
+            "type": "Video",
+            "authors": [],
+            "lastModifiedDate": "2019-04-17T10:39:23Z",
+            "archiveDate": "2017-07-12T14:00:37Z",
+            "exportable": false,
+            "editable": false,
+            "deletable": false,
+            "isPublic": false,
+            "ingestSpaceId": "",
+            "isInIngestSpace": false,
+            "status": "FINISHED",
+            "browseStatus": null,
+            "originalStatus": "completed",
+            "archiveStatus": "failed",
+            "workflow": "manual",
+            "mdProperties": [
+                {
+                    "value": "1968-uu-uu",
+                    "attribute": "dcterms_created"
+                },
+                {
+                    "value": "OR-4x54g1p",
+                    "attribute": "Original_CP_ID"
+                },
+                {
+                    "value": "test_title",
+                    "attribute": "dc_title"
+                },
+                {
+                    "value": "qs09h41k92c",
+                    "attribute": "PID"
+                },
+                {
+                    "value": "description",
+                    "attribute": "dc_description"
+                },
+                {
+                    "value": "testbeeld",
+                    "attribute": "CP"
+                },
+                {
+                    "value": "2016:12:09 08:30:19",
+                    "attribute": "CreationDate"
+                },
+                {
+                    "value": "ADVN",
+                    "attribute": "Original_CP"
+                },
+                {
+                    "value": "OR-4x54g1p",
+                    "attribute": "CP_id"
+                },
+                {
+                    "value": "VVB74",
+                    "attribute": "dc_identifier_localid"
+                },
+                {
+                    "value": "SubtitleHandler",
+                    "attribute": "RightsOwner"
+                },
+                {
+                    "value": "manual",
+                    "attribute": "sp_name"
+                },
+                {
+                    "value": "description",
+                    "attribute": "dcterms_abstract"
+                },
+                {
+                    "value": "bucket",
+                    "attribute": "s3_bucket"
+                },
+                {
+                    "value": "domain",
+                    "attribute": "s3_domain"
+                },
+                {
+                    "value": "owner",
+                    "attribute": "s3_object_owner"
+                },
+                {
+                    "value": "abcdefghijklmop123456789",
+                    "attribute": "md5_viaa"
+                }
+            ],
+            "relations": {}
+        }
+    ]
+}

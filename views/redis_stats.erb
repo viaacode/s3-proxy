@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/application.css" />
+    <link rel="shortcut icon" href="/favicon.ico">
+  </head>
+
+  <body>
+    <%= erb :menu, :layout => false %>
+
+    <div class="content">
+      <h2>Redis information</h2>
+      <div class="redis-info">
+          <table class="table">
+            <% @redis_stats.each do |k, v| %>
+              <tr>
+                <td><%= k %></td>
+                <td><%= v %></td>
+              </tr>
+            <% end %>
+          </table>
+      </div>
+    </div>
+
+  </body>
+</html>

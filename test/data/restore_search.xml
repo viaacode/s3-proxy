@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+  <Name>somebuket</Name>
+  <Prefix>abc1234</Prefix>
+  <Marker/>
+  <MaxKeys>1000</MaxKeys>
+  <Delimiter/>
+  <IsTruncated>false</IsTruncated>
+  <Contents>
+    <Key>somefile_target.mp4</Key>
+    <LastModified>2019-05-27T12:18:02.632Z</LastModified>
+    <ETag>"9ee965"</ETag>
+    <Size>22522868</Size>
+    <Owner>
+      <DisplayName>testuser+or-testbucket</DisplayName>
+      <ID>testuser+or-testbucket</ID>
+    </Owner>
+    <StorageClass>STANDARD</StorageClass>
+  </Contents>
+</ListBucketResult>
