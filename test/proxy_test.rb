@@ -155,7 +155,7 @@ class ProxyTests < Test::Unit::TestCase
     # by giving a 200 back we simulate existing file and correct credentials
     # stub_s3_request(:get, '/lowres/README.md', 200)
     stub_mediahaven_request(
-      api_route: "/media?nrOfResults=25&q=%2B(s3_object_key:%22README.md%22)%20%2B(s3_bucket:%22lowres%22)%20-(Type:videofragment)&startIndex=0",
+      api_route: '/media?nrOfResults=25&q=%2B(s3_object_key:%22README.md%22)%20%2B(s3_bucket:%22lowres%22)%20-(Type:videofragment)&startIndex=0',
       data_file: 'mediahaven_list_objects.json'
     )
 
@@ -170,7 +170,7 @@ class ProxyTests < Test::Unit::TestCase
   def test_failed_download
     # s3 server file not found 404
     stub_mediahaven_request(
-      api_route: "/media?nrOfResults=25&q=%2B(s3_object_key:%22removed_file%22)%20%2B(s3_bucket:%22lowres%22)%20-(Type:videofragment)&startIndex=0",
+      api_route: '/media?nrOfResults=25&q=%2B(s3_object_key:%22removed_file%22)%20%2B(s3_bucket:%22lowres%22)%20-(Type:videofragment)&startIndex=0',
       data: '{"totalNrOfResults":0, "startIndex":0, "mediaDataList":[]}'
     )
 
@@ -185,7 +185,7 @@ class ProxyTests < Test::Unit::TestCase
     # extra slashes in s3 key (bucket is lowres here)
     # stub_s3_request(:get, '/lowres/some/random/slashed/key', 200)
     stub_mediahaven_request(
-      api_route: "/media?nrOfResults=25&q=%2B(s3_object_key:%22some%2Frandom%2Fslashed%2Fkey%22)%20%2B(s3_bucket:%22lowres%22)%20-(Type:videofragment)&startIndex=0",
+      api_route: '/media?nrOfResults=25&q=%2B(s3_object_key:%22some%2Frandom%2Fslashed%2Fkey%22)%20%2B(s3_bucket:%22lowres%22)%20-(Type:videofragment)&startIndex=0',
       data_file: 'mediahaven_list_objects.json'
     )
 
@@ -219,7 +219,7 @@ class ProxyTests < Test::Unit::TestCase
     # when s3 caringo gives back 403 error
     # stub_s3_request(:get, '/lowres/unknown_file', 403)
     stub_mediahaven_request(
-      api_route: "/media?nrOfResults=25&q=%2B(s3_object_key:%22unknown_file%22)%20%2B(s3_bucket:%22lowres%22)%20-(Type:videofragment)&startIndex=0",
+      api_route: '/media?nrOfResults=25&q=%2B(s3_object_key:%22unknown_file%22)%20%2B(s3_bucket:%22lowres%22)%20-(Type:videofragment)&startIndex=0',
       data_file: 'mediahaven_list_objects.json'
     )
 
@@ -262,8 +262,8 @@ class ProxyTests < Test::Unit::TestCase
     set_aws_signature_headers
 
     stub_mediahaven_request(
-      api_route: "/media?nrOfResults=25&q=%2B(s3_object_key:%22README.md%22)%20%2B(s3_bucket:%22lowres%22)%20-(Type:videofragment)&startIndex=0",
-      data_file: "mediahaven_list_objects.json",
+      api_route: '/media?nrOfResults=25&q=%2B(s3_object_key:%22README.md%22)%20%2B(s3_bucket:%22lowres%22)%20-(Type:videofragment)&startIndex=0',
+      data_file: 'mediahaven_list_objects.json'
     )
 
     # make status req
@@ -285,7 +285,7 @@ class ProxyTests < Test::Unit::TestCase
     ).to_return(status: 404, body: '', headers: { 'Content-Length': 0 })
 
     stub_mediahaven_request(
-      api_route: "/media?nrOfResults=25&q=%2B(s3_object_key:%22during_restore%22)%20%2B(s3_bucket:%22lowres%22)%20-(Type:videofragment)&startIndex=0",
+      api_route: '/media?nrOfResults=25&q=%2B(s3_object_key:%22during_restore%22)%20%2B(s3_bucket:%22lowres%22)%20-(Type:videofragment)&startIndex=0',
       data: '{"totalNrOfResults":0}'
     )
 

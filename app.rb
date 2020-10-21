@@ -137,7 +137,7 @@ class S3ProxyApp < Sinatra::Base
         logger.info '404 error'
         halt 404, 'File not found'
       else
-        halt 403, "<Error><Code>InvalidObjectState</Code><Message>File archived to tape</Message><ObjectId>#{mh_object["media_id"]}</ObjectId></Error>"
+        halt 403, "<Error><Code>InvalidObjectState</Code><Message>File archived to tape</Message><ObjectId>#{mh_object['media_id']}</ObjectId></Error>"
       end
     end
 
