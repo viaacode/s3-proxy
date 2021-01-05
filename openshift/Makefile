@@ -3,7 +3,7 @@ VERSION = ${shell (git describe --tags || echo latest)}
 .ONESHELL:
 SHELL = /bin/bash
 
-.PHONY: all
+.PHONY: all login build test lint push tag-int deploy-int test-int tag-qas deploy-qas test-qas tag-prd deploy-prd approved post-clean
 
 NAMESPACE = s3-components
 OC_PROJECT = ${NAMESPACE}
