@@ -43,7 +43,7 @@ ENV STATUS_MAX_POLL_COUNT=2880
 COPY . /usr/src/app/
 
 RUN mkdir -p /usr/src/app/log /usr/src/app/tmp \
-  && chmod -R g+w /usr/src/app/tmp /usr/src/app/log
+  && chmod -R g+w /usr/src/app/tmp /usr/src/app/log /usr/src/app/test/data
 
 USER appuser
 
