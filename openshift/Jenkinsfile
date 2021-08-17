@@ -56,6 +56,7 @@ pipeline {
         }
         stage('Test code') {
             steps {
+                sh 'apk update && apk add make'
                 sh 'make -f ./openshift/Makefile test'
             }
         }
