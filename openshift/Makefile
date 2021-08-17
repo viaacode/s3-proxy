@@ -1,5 +1,5 @@
 .ONESHELL:
-SHELL = /bin/bash
+SHELL = /bin/sh
 
 .PHONY: all test
 
