@@ -4,7 +4,7 @@ SHELL = /bin/sh
 .PHONY: all test
 
 test:
-	# Install dependacies
+	# Install dependencies
 	apk add yaml gcc g++ make linux-headers
 	# Install gems
 	bundle install
