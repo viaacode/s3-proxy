@@ -1,0 +1,26 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: s3-proxy-prd-priv-route
+  namespace: s3-components
+  labels:
+    app: s3-proxy
+    app.kubernetes.io/component: s3-proxy-prd
+    app.kubernetes.io/instance: s3-proxy-prd
+    app.kubernetes.io/name: s3-proxy
+    app.kubernetes.io/part-of: s3-proxy
+    app.openshift.io/runtime: s3-proxy
+    app.openshift.io/runtime-version: prd
+    env: prd
+    template.openshift.io/template-instance-owner: bb8495fe-e6d3-44cd-ae3d-86a22b1ed0cb
+  annotations:
+    haproxy.router.openshift.io/set-forwarded-headers: if-none
+spec:
+  host: s3-proxy-prd-s3-components.private.cloud.meemoo.be
+  to:
+    kind: Service
+    name: s3-proxy-prd
+    weight: 100
+  port:
+    targetPort: http
+  wildcardPolicy: None
