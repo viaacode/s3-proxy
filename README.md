@@ -119,4 +119,13 @@ On local machine run it with ./start_server.sh
     * handle head request : https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html 
       returns busy 200 ok head HEAD /<bucket>/<filename> s3:GetObjectMetadata [^4] 
         x-amz-restore: ongoing-request="true" 
-  
+ 
+ ### Openshift deployment note
+ 
+ The app uses the `X-Forwarded-Host` header to determine the s3 domain. This header is set by the meemoo nginx proxy.
+ In its default configuration, the OKD router adds the hostname of the router to this header which confuses the app.
+ Therefore the okd route associated with this app must have the following annotation set:
+ ```yaml
+   annotations:
+    haproxy.router.openshift.io/set-forwarded-headers: if-none
+  ```
