@@ -7,6 +7,7 @@ test:
 	# Install dependencies
 	apk add yaml gcc g++ make linux-headers
 	# Install gems
+	export BUNDLER_VERSION='2.1.4'
 	gem update --system && gem install bundler
 	bundle update --bundler && bundle install
 	# Set needed Env for tests
