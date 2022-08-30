@@ -9,23 +9,21 @@ module Sinatra
   # used in app methods
   module S3Helpers
     def s3_hostname
-      forwarded_host = request.env['HTTP_X_FORWARDED_HOST'] || request.env['HTTP_HOST']
-      forwarded_host
+      request.env['HTTP_X_FORWARDED_HOST'] || request.env['HTTP_HOST']
     end
 
     def s3_server
       bucket = settings.tenant_api.default_bucket(s3_hostname)
-      s3_server_internal = if bucket && bucket&.length&.positive?
-                             # bucket was set using subdomain
-                             if ENV['S3_SERVER'].include?('https://')
-                               'https://' + bucket + '.' + ENV['S3_SERVER'].gsub(%r{https://}, '')
-                             else
-                               'http://' + bucket + '.' + ENV['S3_SERVER'].gsub(%r{http://}, '')
-                             end
-                           else
-                             ENV['S3_SERVER'].to_s
-                           end
-      s3_server_internal
+      if bucket&.length&.positive?
+        # bucket was set using subdomain
+        if ENV['S3_SERVER'].include?('https://')
+          "https://#{bucket}.#{ENV['S3_SERVER'].gsub(%r{https://}, '')}"
+        else
+          "http://#{bucket}.#{ENV['S3_SERVER'].gsub(%r{http://}, '')}"
+        end
+      else
+        ENV['S3_SERVER'].to_s
+      end
     end
 
     def s3_unsplat(params_splat)
@@ -96,19 +94,20 @@ module Sinatra
       # if we have it in redis, we check the status of restore
       if export_result
         ongoing_restore = true
-        export_result = JSON.parse(export_result) if export_result.class == String
+        export_result = JSON.parse(export_result) if export_result.instance_of?(String)
         status = 'in progress'
-        status = export_result.dig('status') if export_result.dig('status')
-        status = export_result.dig(:status) if export_result.dig(:status)
+        status = export_result['status'] if export_result['status']
+        status = export_result[:status] if export_result[:status]
 
-        if status == 'completed'
+        case status
+        when 'completed'
           # right now we still need to move s3 file here
           ongoing_restore = true # worker still needs to move the file!
-        elsif status == 'in_progress'
+        when 'in_progress'
           ongoing_restore = true
-        elsif status == 'failed'
+        when 'failed'
           ongoing_restore = false # export failed so ongoing restore is not true anymore
-        elsif status == 'restored' # we'll set this ourselves in export worker
+        when 'restored' # we'll set this ourselves in export worker
           ongoing_restore = false # worker has copied file to new name
         end
 

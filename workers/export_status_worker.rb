@@ -27,8 +27,8 @@ class ExportStatusWorker
   end
 
   # values for qas & prd once we have tested initial version with smaller intervals
-  POLL_INTERVAL_SECONDS = (ENV['STATUS_POLL_INTERVAL'].to_i || 60)  # set to 60 seconds interval between each call to MAM in prd/qas
-  POLL_COUNT = (ENV['STATUS_MAX_POLL_COUNT'].to_i || 60 * 24 * 2)   # 2 days if poll interval=60
+  POLL_INTERVAL_SECONDS = (ENV['STATUS_POLL_INTERVAL'].to_i || 60) # set to 60 seconds interval between each call to MAM in prd/qas
+  POLL_COUNT = (ENV['STATUS_MAX_POLL_COUNT'].to_i || (60 * 24 * 2)) # 2 days if poll interval=60
 
   def start_restore(mh_api, restore_object)
     bucket = restore_object['bucket']
@@ -160,8 +160,8 @@ class ExportStatusWorker
         # redis.expire("#{bucket}/#{file_hash}", 60 * 60 * 24 * 14) # expire after 14 days!
         puts 'ExportStatusWorker >>> file copied to destination (redis expiry now 5minutes, in future bump this to 14 days)'
         return
-      rescue StandardError => err
-        puts "ExportStatusWorker >>> ERROR: tenant_api.copy(#{s3host} #{restore_object} failed: #{err.message}"
+      rescue StandardError => e
+        puts "ExportStatusWorker >>> ERROR: tenant_api.copy(#{s3host} #{restore_object} failed: #{e.message}"
       end
 
     end

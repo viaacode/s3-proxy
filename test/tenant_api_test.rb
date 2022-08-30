@@ -13,6 +13,7 @@ ENV['TENANT_API'] = 'http://s3-testing.be:888'
 class TenantApiTests < Test::Unit::TestCase
   include Rack::Test::Methods
   include WebMock::API
+  ENCODING_HEADER = 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3'
 
   def app
     S3ProxyApp
@@ -23,21 +24,21 @@ class TenantApiTests < Test::Unit::TestCase
   end
 
   def test_tenant_list
-    tenant_response = '[{"name":"or-w66976m","lastModified":"2019-03-25T15:20:33.996000Z",'\
-                      '"owner":"admin@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",'\
-                      '"etag":"39088c641f6bdad7ac97d0bae2b9edee"},'\
-                      '{"name":"OR-tenantBucket","lastModified":"2019-03-25T14:17:46.944000Z",'\
-                      '"owner":"admin@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",'\
-                      '"etag":"0f84c523b55f92716a4ea65c8a097b23"},'\
-                      '{"name":"gateway","lastModified":"2019-04-04T13:11:47.176000Z",'\
-                      '"owner":"testuser.testing@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",'\
+    tenant_response = '[{"name":"or-w66976m","lastModified":"2019-03-25T15:20:33.996000Z",' \
+                      '"owner":"admin@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",' \
+                      '"etag":"39088c641f6bdad7ac97d0bae2b9edee"},' \
+                      '{"name":"OR-tenantBucket","lastModified":"2019-03-25T14:17:46.944000Z",' \
+                      '"owner":"admin@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",' \
+                      '"etag":"0f84c523b55f92716a4ea65c8a097b23"},' \
+                      '{"name":"gateway","lastModified":"2019-04-04T13:11:47.176000Z",' \
+                      '"owner":"testuser.testing@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",' \
                       '"etag":"4d1a498a03d36d12ab2460c3b588ec3d"}]'
 
     stub_request(:get, 'http://s3-testing.be:888/_admin/manage/tenants')
       .with(
         headers: {
           'Accept' => '*/*',
-          'Accept-Encoding' => 'gzip, deflate',
+          'Accept-Encoding' => ENCODING_HEADER,
           'Content-Type' => 'application/json',
           'Host' => 's3-testing.be:888'
         }
@@ -53,16 +54,16 @@ class TenantApiTests < Test::Unit::TestCase
   end
 
   def test_tenant_domains_call
-    domain_response = '[{"name":"OR-tenantBucket.s3-testing.be:888",'\
-                      '"lastModified":"2019-03-25T14:32:38.816000Z",'\
-                      '"owner":"admin@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",'\
+    domain_response = '[{"name":"OR-tenantBucket.s3-testing.be:888",' \
+                      '"lastModified":"2019-03-25T14:32:38.816000Z",' \
+                      '"owner":"admin@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",' \
                       '"etag":"700a03b2c34998f3880982a20a031969"}]'
 
     stub_request(:get, 'http://s3-testing.be:888/_admin/manage/tenants/OR-tenantBucket/domains')
       .with(
         headers: {
           'Accept' => '*/*',
-          'Accept-Encoding' => 'gzip, deflate',
+          'Accept-Encoding' => ENCODING_HEADER,
           'Content-Type' => 'application/json',
           'Host' => 's3-testing.be:888'
         }
@@ -79,21 +80,21 @@ class TenantApiTests < Test::Unit::TestCase
   end
 
   def tenant_mapping_stubs
-    tenant_response = '[{"name":"or-w66976m","lastModified":"2019-03-25T15:20:33.996000Z",'\
-                      '"owner":"admin@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",'\
-                      '"etag":"39088c641f6bdad7ac97d0bae2b9edee"},'\
-                      '{"name":"OR-tenantBucket","lastModified":"2019-03-25T14:17:46.944000Z",'\
-                      '"owner":"admin@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",'\
-                      '"etag":"0f84c523b55f92716a4ea65c8a097b23"},'\
-                      '{"name":"gateway","lastModified":"2019-04-04T13:11:47.176000Z",'\
-                      '"owner":"testuser.testing@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",'\
+    tenant_response = '[{"name":"or-w66976m","lastModified":"2019-03-25T15:20:33.996000Z",' \
+                      '"owner":"admin@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",' \
+                      '"etag":"39088c641f6bdad7ac97d0bae2b9edee"},' \
+                      '{"name":"OR-tenantBucket","lastModified":"2019-03-25T14:17:46.944000Z",' \
+                      '"owner":"admin@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",' \
+                      '"etag":"0f84c523b55f92716a4ea65c8a097b23"},' \
+                      '{"name":"gateway","lastModified":"2019-04-04T13:11:47.176000Z",' \
+                      '"owner":"testuser.testing@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",' \
                       '"etag":"4d1a498a03d36d12ab2460c3b588ec3d"}]'
 
     stub_request(:get, 'http://s3-testing.be:888/_admin/manage/tenants')
       .with(
         headers: {
           'Accept' => '*/*',
-          'Accept-Encoding' => 'gzip, deflate',
+          'Accept-Encoding' => ENCODING_HEADER,
           'Content-Type' => 'application/json',
           'Host' => 's3-testing.be:888'
         }
@@ -105,7 +106,7 @@ class TenantApiTests < Test::Unit::TestCase
       .with(
         headers: {
           'Accept' => '*/*',
-          'Accept-Encoding' => 'gzip, deflate',
+          'Accept-Encoding' => ENCODING_HEADER,
           'Content-Type' => 'application/json',
           'Host' => 's3-testing.be:888'
         }
@@ -113,16 +114,16 @@ class TenantApiTests < Test::Unit::TestCase
       .to_return(status: 200, body: '[]', headers: {})
 
     # filled in response
-    vrt_tenant =  '[{"name":"OR-tenantBucket.s3-testing.be:888",'\
-                  '"lastModified":"2019-03-25T14:32:38.816000Z",'\
-                  '"owner":"admin@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",'\
+    vrt_tenant =  '[{"name":"OR-tenantBucket.s3-testing.be:888",' \
+                  '"lastModified":"2019-03-25T14:32:38.816000Z",' \
+                  '"owner":"admin@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",' \
                   '"etag":"700a03b2c34998f3880982a20a031969"}]'
 
     stub_request(:get, 'http://s3-testing.be:888/_admin/manage/tenants/OR-tenantBucket/domains')
       .with(
         headers: {
           'Accept' => '*/*',
-          'Accept-Encoding' => 'gzip, deflate',
+          'Accept-Encoding' => ENCODING_HEADER,
           'Content-Type' => 'application/json',
           'Host' => 's3-testing.be:888'
         }
@@ -130,14 +131,14 @@ class TenantApiTests < Test::Unit::TestCase
       .to_return(status: 200, body: vrt_tenant, headers: {})
 
     # gateway response test
-    gateway_tenant =  '[{"name":"s3-testing.be:888","lastModified":"2019-04-04T13:12:34.148000Z",'\
-                      '"owner":"testuser.testing@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",'\
+    gateway_tenant =  '[{"name":"s3-testing.be:888","lastModified":"2019-04-04T13:12:34.148000Z",' \
+                      '"owner":"testuser.testing@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",' \
                       '"etag":"5a9be5fc1fcfeea9ce136dce94f4e7aa"}]'
     stub_request(:get, 'http://s3-testing.be:888/_admin/manage/tenants/gateway/domains')
       .with(
         headers: {
           'Accept' => '*/*',
-          'Accept-Encoding' => 'gzip, deflate',
+          'Accept-Encoding' => ENCODING_HEADER,
           'Content-Type' => 'application/json',
           'Host' => 's3-testing.be:888'
         }
@@ -146,16 +147,16 @@ class TenantApiTests < Test::Unit::TestCase
   end
 
   def tenant_mapping_stubs_gateway
-    tenant_response = '['\
-                      '{"name":"gateway","lastModified":"2019-04-04T13:11:47.176000Z",'\
-                      '"owner":"testuser.testing@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",'\
+    tenant_response = '[' \
+                      '{"name":"gateway","lastModified":"2019-04-04T13:11:47.176000Z",' \
+                      '"owner":"testuser.testing@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",' \
                       '"etag":"4d1a498a03d36d12ab2460c3b588ec3d"}]'
 
     stub_request(:get, 'http://s3-testing.be:888/_admin/manage/tenants')
       .with(
         headers: {
           'Accept' => '*/*',
-          'Accept-Encoding' => 'gzip, deflate',
+          'Accept-Encoding' => ENCODING_HEADER,
           'Content-Type' => 'application/json',
           'Host' => 's3-testing.be:888'
         }
@@ -163,14 +164,14 @@ class TenantApiTests < Test::Unit::TestCase
       .to_return(status: 200, body: tenant_response, headers: {})
 
     # gateway response test
-    gateway_tenant =  '[{"name":"s3-testing.be:888","lastModified":"2019-04-04T13:12:34.148000Z",'\
-                      '"owner":"testuser.testing@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",'\
+    gateway_tenant =  '[{"name":"s3-testing.be:888","lastModified":"2019-04-04T13:12:34.148000Z",' \
+                      '"owner":"testuser.testing@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",' \
                       '"etag":"5a9be5fc1fcfeea9ce136dce94f4e7aa"}]'
     stub_request(:get, 'http://s3-testing.be:888/_admin/manage/tenants/gateway/domains')
       .with(
         headers: {
           'Accept' => '*/*',
-          'Accept-Encoding' => 'gzip, deflate',
+          'Accept-Encoding' => ENCODING_HEADER,
           'Content-Type' => 'application/json',
           'Host' => 's3-testing.be:888'
         }

@@ -7,8 +7,7 @@ class ErrorResponse
     @code = code
   end
 
-  attr_reader :code
-  attr_reader :body
+  attr_reader :code, :body
 end
 
 # Helper class to log to stdout
