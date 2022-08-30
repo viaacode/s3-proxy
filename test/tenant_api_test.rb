@@ -13,7 +13,7 @@ ENV['TENANT_API'] = 'http://s3-testing.be:888'
 class TenantApiTests < Test::Unit::TestCase
   include Rack::Test::Methods
   include WebMock::API
-  ENCODING_HEADER='gzip;q=1.0,deflate;q=0.6,identity;q=0.3'
+  ENCODING_HEADER = 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3'
 
   def app
     S3ProxyApp

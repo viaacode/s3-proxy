@@ -16,7 +16,7 @@ require 'sidekiq'
 require 'sidekiq/api'
 require 'sidekiq/web'
 require 'connection_pool'
-require_relative 'workers/export_status_worker.rb'
+require_relative 'workers/export_status_worker'
 
 # main sinatra application
 class S3ProxyApp < Sinatra::Base

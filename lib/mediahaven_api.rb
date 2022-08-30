@@ -9,11 +9,11 @@ require_relative 'api_helpers'
 # we now do basic auth, later on possibly do oauth 2.
 class MediahavenApi
   def initialize(
-                  api_server: (ENV['MEDIAHAVEN_API'] || 'https://media-api-tests.be'),
-                  api_user: (ENV['MEDIAHAVEN_USER'] || 'apiUser'),
-                  api_password: (ENV['MEDIAHAVEN_PASS'] || 'apiPass'),
-                  logger: StdOutLogger.new
-                )
+    api_server: (ENV['MEDIAHAVEN_API'] || 'https://media-api-tests.be'),
+    api_user: (ENV['MEDIAHAVEN_USER'] || 'apiUser'),
+    api_password: (ENV['MEDIAHAVEN_PASS'] || 'apiPass'),
+    logger: StdOutLogger.new
+  )
     @api_url = api_server.to_s
     @api_user = api_user.to_s
     @api_password = api_password.to_s
@@ -78,7 +78,7 @@ class MediahavenApi
   end
 
   # export object from tape to storage specified by default location
-  # basically this starts the export and then gives back an exportId and status 
+  # basically this starts the export and then gives back an exportId and status
   # which can be polled with export_status calls
   # this uses the default_export_location
   def export_to_default(object_id, reason)

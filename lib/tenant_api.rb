@@ -8,12 +8,12 @@ require_relative 'api_helpers'
 # Class with api calls to get tenant domains and default bucket names
 class TenantApi
   def initialize(
-                  api_server: (ENV['TENANT_API'] || 'Unconfigured TENANT_API setting missing!'),
-                  api_user: (ENV['TENANT_USER'] || ''),
-                  api_password: (ENV['TENANT_PASS'] || ''),
-                  mh_swarm_url: (ENV['MEDIAHAVEN_SWARM'] || 'http://mediahaven.prd.do.viaa.be'),
-                  logger: StdOutLogger.new
-                )
+    api_server: (ENV['TENANT_API'] || 'Unconfigured TENANT_API setting missing!'),
+    api_user: (ENV['TENANT_USER'] || ''),
+    api_password: (ENV['TENANT_PASS'] || ''),
+    mh_swarm_url: (ENV['MEDIAHAVEN_SWARM'] || 'http://mediahaven.prd.do.viaa.be'),
+    logger: StdOutLogger.new
+  )
     @api_url = api_server.to_s
     @api_user = api_user.to_s
     @api_password = api_password.to_s
@@ -55,8 +55,8 @@ class TenantApi
         password: @api_password,
         url: copy_url
       )
-    rescue RestClient::MovedPermanently => err
-      err.response.follow_redirection
+    rescue RestClient::MovedPermanently => e
+      e.response.follow_redirection
     end
   end
 

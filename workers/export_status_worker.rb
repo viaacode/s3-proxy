@@ -160,8 +160,8 @@ class ExportStatusWorker
         # redis.expire("#{bucket}/#{file_hash}", 60 * 60 * 24 * 14) # expire after 14 days!
         puts 'ExportStatusWorker >>> file copied to destination (redis expiry now 5minutes, in future bump this to 14 days)'
         return
-      rescue StandardError => err
-        puts "ExportStatusWorker >>> ERROR: tenant_api.copy(#{s3host} #{restore_object} failed: #{err.message}"
+      rescue StandardError => e
+        puts "ExportStatusWorker >>> ERROR: tenant_api.copy(#{s3host} #{restore_object} failed: #{e.message}"
       end
 
     end
