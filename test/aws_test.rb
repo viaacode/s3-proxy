@@ -18,7 +18,7 @@ class AwsMinioTests < Test::Unit::TestCase
   include WebMock::API
 
   NGINX_SERVER = (ENV['NGINX_SERVER'] || 'http://localhost:9090')
-  S3_SERVER = ENV['S3_SERVER']
+  S3_SERVER = ENV.fetch('S3_SERVER', nil)
 
   def app
     S3ProxyApp

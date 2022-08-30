@@ -1,8 +1,10 @@
-FROM ruby:2.4-alpine3.6
+FROM ruby:2.6.4-alpine3.10
 
 WORKDIR /usr/src/app
 
+ENV BUNDLER_VERSION='2.1.4'
 COPY Gemfile Gemfile.lock /usr/src/app/
+RUN gem update --system && gem install bundler -v 2.1.4
 
 # linux headers for unicorn gems build
 RUN apk update && \
@@ -10,7 +12,7 @@ RUN apk update && \
                     yaml yaml-dev \
                     gcc g++ make \
                     linux-headers \ 
-  && cd /usr/src/app && bundle install \
+  && cd /usr/src/app && bundle update --bundler && bundle install \
   && apk del build-dependencies \
   && rm -rf /var/cache/apk/*
 

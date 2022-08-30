@@ -1,15 +1,17 @@
-Metrics/LineLength:
-  IgnoreCopDirectives: true
-  Max: 130
+Layout/LineLength:
+  Max: 200
+
+Lint/SymbolConversion:
+  Enabled: false
+
+Lint/DuplicateBranch:
+  Enabled: false
 
 Metrics/ModuleLength:
   Max: 300
 
 Metrics/ClassLength:
   Max: 300
-
-Metrics/LineLength:
-  Max: 200
 
 Metrics/AbcSize:
   Max: 70
@@ -34,4 +36,5 @@ Metrics/CyclomaticComplexity:
   Max: 15
 
 AllCops:
+  NewCops: enable
   TargetRubyVersion: 2.4

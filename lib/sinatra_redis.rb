@@ -15,8 +15,7 @@ module Sinatra
     # these catch connection errors and have auto expire
     # on set keys with configurable REDIS_EXPIRE env var.
     def redis_get(key)
-      val = redis.get(key)
-      val
+      redis.get(key)
     rescue ::Redis::CannotConnectError
       puts('Warning: in redis_get redis-server connect error!')
     end

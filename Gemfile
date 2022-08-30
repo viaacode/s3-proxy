@@ -13,6 +13,7 @@ gem 'sidekiq'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'unicorn'
+gem 'i18n'
 
 gem 'activesupport' # for hash.from_xml
 
