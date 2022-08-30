@@ -2,8 +2,9 @@ FROM ruby:2.6.4-alpine3.10
 
 WORKDIR /usr/src/app
 
+ENV BUNDLER_VERSION='2.1.4'
 COPY Gemfile Gemfile.lock /usr/src/app/
-RUN gem update --system && gem install bundler
+RUN gem update --system && gem install bundler -v 2.1.4
 
 # linux headers for unicorn gems build
 RUN apk update && \
