@@ -3,7 +3,7 @@ FROM ruby:2.6.4-alpine3.10
 WORKDIR /usr/src/app
 
 COPY Gemfile Gemfile.lock /usr/src/app/
-ENV BUNDLER_VERSION=2.3.12
+RUN gem update --system && gem install bundler
 
 # linux headers for unicorn gems build
 RUN apk update && \
@@ -11,7 +11,7 @@ RUN apk update && \
                     yaml yaml-dev \
                     gcc g++ make \
                     linux-headers \ 
-  && cd /usr/src/app && bundle install \
+  && cd /usr/src/app && bundle update --bundler && bundle install \
   && apk del build-dependencies \
   && rm -rf /var/cache/apk/*
 
