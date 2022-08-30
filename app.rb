@@ -26,7 +26,7 @@ class S3ProxyApp < Sinatra::Base
 
   configure :production, :development, :test do
     # for docker use stdout logger
-    logger = Logger.new(STDOUT) if production?
+    logger = Logger.new($stdout) if production?
     logger = Logger.new(File.open("#{root}/log/#{environment}.log", 'a')) if development?
     logger.level = Logger::DEBUG if development?
     set :logger, logger

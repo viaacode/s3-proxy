@@ -49,7 +49,7 @@ class ProxyTests < Test::Unit::TestCase
 
   def set_aws_signature_headers
     header 'Authorization', 'AWS4-HMAC-SHA256 Credential=shahashhere, SignedHeaders=cache-control;content-type;host;x-amz-date, Signature=signedhash'
-    header 'X-Forwarded-Host', ENV['S3_SERVER']
+    header 'X-Forwarded-Host', ENV.fetch('S3_SERVER', nil)
   end
 
   def stub_s3_request(method, path, status_code)
@@ -83,14 +83,14 @@ class ProxyTests < Test::Unit::TestCase
   # TODO: remove code duplication (this is also in tenant_api test)
   # we need to move this into seperate file thats imported here...
   def tenant_mapping_stubs
-    tenant_response = '[{"name":"or-w66976m","lastModified":"2019-03-25T15:20:33.996000Z",'\
-                      '"owner":"admin@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",'\
-                      '"etag":"39088c641f6bdad7ac97d0bae2b9edee"},'\
-                      '{"name":"OR-tenantBucket","lastModified":"2019-03-25T14:17:46.944000Z",'\
-                      '"owner":"admin@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",'\
-                      '"etag":"0f84c523b55f92716a4ea65c8a097b23"},'\
-                      '{"name":"gateway","lastModified":"2019-04-04T13:11:47.176000Z",'\
-                      '"owner":"testuser.test@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",'\
+    tenant_response = '[{"name":"or-w66976m","lastModified":"2019-03-25T15:20:33.996000Z",' \
+                      '"owner":"admin@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",' \
+                      '"etag":"39088c641f6bdad7ac97d0bae2b9edee"},' \
+                      '{"name":"OR-tenantBucket","lastModified":"2019-03-25T14:17:46.944000Z",' \
+                      '"owner":"admin@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",' \
+                      '"etag":"0f84c523b55f92716a4ea65c8a097b23"},' \
+                      '{"name":"gateway","lastModified":"2019-04-04T13:11:47.176000Z",' \
+                      '"owner":"testuser.test@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",' \
                       '"etag":"4d1a498a03d36d12ab2460c3b588ec3d"}]'
 
     stub_request(:get, 'http://s3-testing.be:888/_admin/manage/tenants')
@@ -117,10 +117,10 @@ class ProxyTests < Test::Unit::TestCase
       .to_return(status: 200, body: '[]', headers: {})
 
     # filled in response
-    vrt_tenant = '[{"name":"OR-tenantBucket.s3-testing.be",'\
-              '"lastModified":"2019-03-25T14:32:38.816000Z",'\
-              '"owner":"admin@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",'\
-              '"etag":"700a03b2c34998f3880982a20a031969"}]'
+    vrt_tenant = '[{"name":"OR-tenantBucket.s3-testing.be",' \
+                 '"lastModified":"2019-03-25T14:32:38.816000Z",' \
+                 '"owner":"admin@","contentMd5":"1B2M2Y8AsgTpgAmY7PhCfg==",' \
+                 '"etag":"700a03b2c34998f3880982a20a031969"}]'
 
     stub_request(:get, 'http://s3-testing.be:888/_admin/manage/tenants/OR-tenantBucket/domains')
       .with(
@@ -134,8 +134,8 @@ class ProxyTests < Test::Unit::TestCase
       .to_return(status: 200, body: vrt_tenant, headers: {})
 
     # gateway response test
-    gateway_tenant =  '[{"name":"s3-testing.be","lastModified":"2019-04-04T13:12:34.148000Z",'\
-                      '"owner":"test.testuser@","contentMd5":"test==",'\
+    gateway_tenant =  '[{"name":"s3-testing.be","lastModified":"2019-04-04T13:12:34.148000Z",' \
+                      '"owner":"test.testuser@","contentMd5":"test==",' \
                       '"etag":"teste5fc1fcfeea9cF136dce94f4e7aa"}]'
     stub_request(:get, 'http://s3-testing.be:888/_admin/manage/tenants/gateway/domains')
       .with(

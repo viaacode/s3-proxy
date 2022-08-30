@@ -120,7 +120,7 @@ class MediaHavenTests < Test::Unit::TestCase
     # test audio file
     object_id = '92b8c18e863a4b19ae8aff1b73d4384355dfe2bd87af4be5b273987f417e1289'
     stub_mediahaven_post(
-      "/media/#{object_id}/export/#{ENV['EXPORT_LOCATION_ID']}",
+      "/media/#{object_id}/export/#{ENV.fetch('EXPORT_LOCATION_ID', nil)}",
       'mh_export_response.json'
     )
 

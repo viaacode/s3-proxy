@@ -185,7 +185,7 @@ class MediahavenApi
   # export to 1188 on qas and some other id on production
   # we use EXPORT_ID as environment variable to adjust this
   def export(object_id, reason)
-    export_to_location(object_id, ENV['EXPORT_LOCATION_ID'], reason)
+    export_to_location(object_id, ENV.fetch('EXPORT_LOCATION_ID', nil), reason)
   end
 
   # After an export or export_location we can check the restore status.
