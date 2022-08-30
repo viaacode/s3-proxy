@@ -55,7 +55,7 @@ class MediahavenApi
           'domain': fragment['mdProperties'].find { |x| x['attribute'] == 's3_domain' }['value'],
           'owner': fragment['mdProperties'].find { |x| x['attribute'] == 's3_object_owner' }['value'],
           'file_hash': file_hash,
-          'md5sum': fragment['mdProperties'].find { |x| x['attribute'] == 'md5' }['value']
+          'md5sum': fragment['mdProperties'].find { |x| x['attribute'] == 'md5_viaa' }['value']
         }
       end
     rescue RestClient::Unauthorized
