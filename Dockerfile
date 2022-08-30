@@ -1,4 +1,4 @@
-FROM ruby:2.4-alpine3.6
+FROM ruby:2.6.4-alpine3.10
 
 WORKDIR /usr/src/app
 
@@ -11,7 +11,7 @@ RUN apk update && \
                     yaml yaml-dev \
                     gcc g++ make \
                     linux-headers \ 
-  && cd /usr/src/app && gem update --system && bundle install \
+  && cd /usr/src/app && bundle install \
   && apk del build-dependencies \
   && rm -rf /var/cache/apk/*
 
