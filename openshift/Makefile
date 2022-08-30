@@ -6,6 +6,8 @@ SHELL = /bin/sh
 test:
 	# Install dependencies
 	apk add yaml gcc g++ make linux-headers
+	gem update --system
+	gem install bundler
 	bundle update --bundler
 	# Install gems
 	bundle install
