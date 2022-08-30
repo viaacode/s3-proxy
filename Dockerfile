@@ -48,8 +48,6 @@ RUN mkdir -p /usr/src/app/log /usr/src/app/tmp \
   && chmod -R g+w /usr/src/app/tmp /usr/src/app/log /usr/src/app/test/data && chmod g+w Gemfile.lock
 
 USER appuser
-RUN chmod +w Gemfile.lock && gem update --system && gem install bundler -v 2.1.4
-
 
 #CMD bundle exec unicorn -c /usr/src/app/config/unicorn.rb
 CMD /usr/src/app/start.sh
