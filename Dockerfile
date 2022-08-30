@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 ENV BUNDLER_VERSION='2.1.4'
 COPY Gemfile Gemfile.lock /usr/src/app/
-RUN chown a+w Gemfile.lock && gem update --system && gem install bundler -v 2.1.4
+RUN chmod +w Gemfile.lock && gem update --system && gem install bundler -v 2.1.4
 
 # linux headers for unicorn gems build
 RUN apk update && \
