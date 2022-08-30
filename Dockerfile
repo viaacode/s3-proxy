@@ -11,7 +11,7 @@ RUN apk update && \
                     yaml yaml-dev \
                     gcc g++ make \
                     linux-headers \ 
-  && cd /usr/src/app && gem update bundler && bundle install \
+  && cd /usr/src/app && gem update --system && bundle install \
   && apk del build-dependencies \
   && rm -rf /var/cache/apk/*
 
