@@ -29,7 +29,7 @@ class MediaHavenTests < Test::Unit::TestCase
       .with(
         headers: {
           'Accept' => '*/*',
-          'Accept-Encoding' => 'gzip, deflate',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
           'Content-Type' => 'application/json',
           'Host' => 'media-api-tests.be'
         }
@@ -43,7 +43,7 @@ class MediaHavenTests < Test::Unit::TestCase
       .with(
         headers: {
           'Accept' => '*/*',
-          'Accept-Encoding' => 'gzip, deflate',
+          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
           'Content-Type' => 'application/json',
           'Host' => 'media-api-tests.be'
         }

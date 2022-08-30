@@ -18,7 +18,6 @@ class MediahavenApi
     @api_user = api_user.to_s
     @api_password = api_password.to_s
     @logger = logger
-    # @logger.info "DEBUG: MediahavenApi initialised url=#{@api_url} user=#{@api_user} pass=#{@api_pass}.\n"
   end
 
   def url
@@ -42,7 +41,6 @@ class MediahavenApi
 
   # Given a valid bucket+filename give back the associated mediaObjectId that can be used to restore
   def lookup_s3_path(bucket, file_hash)
-    # TO DO add s3_hostname to query
     object = {}
     begin
       # we exclude video fragments so that we don't get back multiple results if fragments have been added
@@ -56,10 +54,8 @@ class MediahavenApi
           'bucket': fragment['mdProperties'].find { |x| x['attribute'] == 's3_bucket' }['value'],
           'domain': fragment['mdProperties'].find { |x| x['attribute'] == 's3_domain' }['value'],
           'owner': fragment['mdProperties'].find { |x| x['attribute'] == 's3_object_owner' }['value'],
-          # 'domain': 's3-qas.viaa.be',    # TODO when QAS contains valid testcase
-          # 'owner': 'user VRT+or-rf5kf25'    # TODO when QAS contains valid testcase,
           'file_hash': file_hash,
-          'md5sum': fragment['mdProperties'].find { |x| x['attribute'] == 'md5_viaa' }['value']
+          'md5sum': fragment['mdProperties'].find { |x| x['attribute'] == 'md5' }['value']
         }
       end
     rescue RestClient::Unauthorized
@@ -82,7 +78,8 @@ class MediahavenApi
   end
 
   # export object from tape to storage specified by default location
-  # basically this starts the export and then gives back an exportId and status which can be polled with export_status calls
+  # basically this starts the export and then gives back an exportId and status 
+  # which can be polled with export_status calls
   # this uses the default_export_location
   def export_to_default(object_id, reason)
     begin
@@ -219,7 +216,6 @@ class MediahavenApi
       url: "#{@api_url}#{api_route}"
     )
 
-    # puts "--- #{response.body}"
     JSON.parse(response.body)
   end
 end
