@@ -3,6 +3,7 @@ FROM ruby:2.4-alpine3.6
 WORKDIR /usr/src/app
 
 COPY Gemfile Gemfile.lock /usr/src/app/
+RUN chown a+w Gemfile.lock
 
 # linux headers for unicorn gems build
 RUN apk update && \
